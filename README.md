@@ -99,13 +99,11 @@ export const EVENT_CONFIG = {
 
 ---
 
-## Publicación y Despliegue en 1 Enlace
+## Enlace Público en Producción (GitHub Pages)
 
-Para compartir un **único enlace** por WhatsApp (ejemplo: `tudominio.com/thiago`):
+La invitación se encuentra desplegada y lista para compartir:
 
-1. **Vercel / Netlify / GitHub Pages:**
-   - Arrastra la carpeta del proyecto a [Netlify Drop](https://app.netlify.com/drop) o vincúlala a GitHub con Pages.
-2. **Hosting Tradicional (cPanel / Apache / Nginx):**
-   - Sube todos los archivos a la carpeta `public_html` o al subdirectorio `/thiago`.
-3. Al compartir el enlace en WhatsApp, se mostrará automáticamente el título:
-   **Baby Shower Thiago** con la descripción y preview configurados.
+- **Enlace de la Invitación:** [https://julianacomunnity-png.github.io/invitacion-baby-shower-thiago/](https://julianacomunnity-png.github.io/invitacion-baby-shower-thiago/)
+- **Repositorio Oficial:** [https://github.com/julianacomunnity-png/invitacion-baby-shower-thiago](https://github.com/julianacomunnity-png/invitacion-baby-shower-thiago)
+- **Rama de Despliegue:** `main` (directorio raíz `/`)
+- **Compatibilidad:** 100% estático, no requiere servidor local activo ni dependencias adicionales.
