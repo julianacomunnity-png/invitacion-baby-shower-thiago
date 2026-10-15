@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9eb68d" />
+      <stop offset="100%" stop-color="#728c60" />
+    </linearGradient>
+    <linearGradient id="goldenFlower" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe678" />
+      <stop offset="100%" stop-color="#f5af19" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rama curva central izquierda -->
+  <path d="M 50 40 Q 180 20 300 45 Q 420 70 550 40" fill="none" stroke="#bda586" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Hojitas delicadas a lo largo de la rama -->
+  <!-- Lado izquierdo -->
+  <path d="M 90 35 C 80 20 100 12 110 28 C 110 28 95 38 90 35 Z" fill="url(#leafGrad)" opacity="0.9" />
+  <path d="M 120 40 C 130 55 110 65 105 48 C 105 48 115 38 120 40 Z" fill="url(#leafGrad)" opacity="0.85" />
+  <path d="M 160 30 C 150 15 170 5 180 22 C 180 22 165 32 160 30 Z" fill="url(#leafGrad)" opacity="0.95" />
+  <path d="M 195 38 C 205 52 185 62 178 45 C 178 45 190 36 195 38 Z" fill="url(#leafGrad)" opacity="0.8" />
+  <path d="M 235 34 C 225 18 245 8 255 24 C 255 24 240 35 235 34 Z" fill="url(#leafGrad)" opacity="0.9" />
+
+  <!-- Florcita dorada izquierda -->
+  <circle cx="140" cy="28" r="4" fill="url(#goldenFlower)" />
+  <circle cx="140" cy="28" r="1.5" fill="#805426" />
+
+  <!-- Centro con ramitas y bayas -->
+  <path d="M 285 45 C 275 30 295 20 305 38 C 305 38 290 48 285 45 Z" fill="url(#leafGrad)" opacity="0.9" />
+  <path d="M 315 48 C 325 62 305 72 298 55 C 298 55 310 46 315 48 Z" fill="url(#leafGrad)" opacity="0.85" />
+  <circle cx="300" cy="45" r="5" fill="url(#goldenFlower)" />
+  <circle cx="300" cy="45" r="2" fill="#805426" />
+
+  <!-- Lado derecho -->
+  <path d="M 365 52 C 355 35 375 25 385 42 C 385 42 370 55 365 52 Z" fill="url(#leafGrad)" opacity="0.9" />
+  <path d="M 400 50 C 410 65 390 75 382 58 C 382 58 395 48 400 50 Z" fill="url(#leafGrad)" opacity="0.85" />
+  <path d="M 440 44 C 430 28 450 18 460 34 C 460 34 445 45 440 44 Z" fill="url(#leafGrad)" opacity="0.95" />
+  <path d="M 475 42 C 485 58 465 68 458 50 C 458 50 470 40 475 42 Z" fill="url(#leafGrad)" opacity="0.8" />
+  <path d="M 510 38 C 500 22 520 12 530 28 C 530 28 515 39 510 38 Z" fill="url(#leafGrad)" opacity="0.9" />
+
+  <!-- Florcita dorada derecha -->
+  <circle cx="455" cy="36" r="4" fill="url(#goldenFlower)" />
+  <circle cx="455" cy="36" r="1.5" fill="#805426" />
+
+  <!-- Puntos y destellos delicados -->
+  <circle cx="70" cy="38" r="2.5" fill="#f5af19" opacity="0.6" />
+  <circle cx="215" cy="26" r="2" fill="#f5af19" opacity="0.6" />
+  <circle cx="340" cy="58" r="2.5" fill="#f5af19" opacity="0.6" />
+  <circle cx="535" cy="35" r="2" fill="#f5af19" opacity="0.6" />
+</svg>

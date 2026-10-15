@@ -1,0 +1,299 @@
+/* ====================================================================
+   MAIN.CSS - VARIABLES DE DISEÑO, RESET Y TIPOGRAFÍA EDITORIAL
+   Baby Shower Thiago
+   ==================================================================== */
+
+:root {
+  /* Paleta cromática: Papel artesanal, miel dorada y tonos cálidos */
+  --bg-crema: #fffcf4;
+  --bg-crema-tint: #fcf6e8;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fef8eb;
+  --bg-accent: #fcf1d8;
+  --bg-gold-light: #fef3d6;
+
+  --color-primary: #f5af19;
+  --color-primary-dark: #d88904;
+  --color-honey: #e89505;
+  --color-honey-deep: #b56b00;
+
+  --color-brown-dark: #4a2c11;
+  --color-brown-medium: #704724;
+  --color-brown-light: #8e623c;
+  --color-text-body: #5a3819;
+  --color-text-muted: #8c6e54;
+
+  --color-leaf-green: #7d9669;
+  --color-leaf-light: #a4be92;
+
+  --color-border: #f0deb8;
+  --color-border-card: #f5e7cb;
+  --color-border-soft: #ecd9b3;
+
+  /* Sombras sutiles y naturales */
+  --shadow-sm: 0 2px 10px rgba(112, 71, 36, 0.05);
+  --shadow-md: 0 8px 24px rgba(112, 71, 36, 0.08);
+  --shadow-lg: 0 16px 36px rgba(112, 71, 36, 0.12);
+  --shadow-gold: 0 8px 24px rgba(245, 175, 25, 0.28);
+
+  /* Radios de borde orgánicos */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+
+  /* Tipografías editoriales */
+  --font-display: "Agbalumo", "Playfair Display", Georgia, serif;
+  --font-heading: "Playfair Display", "Lora", Georgia, serif;
+  --font-script: "Caveat", cursive;
+  --font-body: "Outfit", system-ui, -apple-system, sans-serif;
+
+  /* Transiciones */
+  --transition-normal: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset general */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #f6eedb;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* En modo sobre cerrado se bloquea el scroll */
+body.envelope-locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Lienzo editorial continuo (Brochure Sheet) centrado */
+.invitation-wrapper.brochure-sheet {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--bg-crema);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 50px rgba(112, 71, 36, 0.14);
+  overflow-x: hidden;
+  /* Textura de papel artesanal */
+  background-image: 
+    radial-gradient(#faeed4 1.2px, transparent 1.2px),
+    radial-gradient(#faeed4 1.2px, var(--bg-crema) 1.2px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+@media (min-width: 520px) {
+  body {
+    background-image: 
+      radial-gradient(#edd4a8 1.2px, transparent 1.2px),
+      radial-gradient(#edd4a8 1.2px, #f6eedb 1.2px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    padding: 30px 0;
+  }
+
+  .invitation-wrapper.brochure-sheet {
+    border-radius: 36px;
+    border: 1px solid rgba(220, 190, 140, 0.45);
+    box-shadow: 
+      0 24px 70px rgba(112, 71, 36, 0.18),
+      0 0 0 10px rgba(255, 252, 244, 0.7);
+  }
+}
+
+/* Tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-brown-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-body);
+}
+
+a {
+  color: var(--color-honey-deep);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Botones del Sistema Editorial */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ffd15c, #f5af19 60%, #e28e02);
+  color: #3d2105;
+  border: 1px solid #ffd875;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ffe17d, #ffba24 60%, #ed9704);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(245, 175, 25, 0.4);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #2fe065, #25d366 50%, #1da851);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  border: 1px solid #57ea87;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #44e877, #26da6a 50%, #1eaf54);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+}
+
+.btn-editorial-secondary {
+  background: #ffffff;
+  color: var(--color-brown-dark);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 24px;
+}
+
+.btn-editorial-secondary:hover {
+  background: var(--bg-card-subtle);
+  border-color: var(--color-honey);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-seal-action {
+  background: linear-gradient(135deg, #ffd15c, #f5af19 50%, #e08c02);
+  color: #3d2105;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  padding: 14px 30px;
+  border: 1.5px solid #ffde8a;
+  box-shadow: 0 8px 24px rgba(245, 175, 25, 0.38);
+}
+
+.btn-seal-action:hover {
+  background: linear-gradient(135deg, #ffe075, #ffb81e 50%, #ed9400);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(245, 175, 25, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-brown-medium);
+  border: 1.5px dashed var(--color-honey);
+}
+
+.btn-outline:hover {
+  background: var(--bg-gold-light);
+  border-style: solid;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-pill);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Divisores Botánicos Editoriales */
+.editorial-divider {
+  width: 78%;
+  max-width: 290px;
+  margin: 32px auto;
+  opacity: 0.82;
+}
+
+/* Encabezados de sección editoriales */
+.editorial-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.editorial-kicker {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--color-honey-deep);
+  background: var(--bg-gold-light);
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+  border: 1px solid #f9e2b1;
+}
+
+.editorial-title {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  color: var(--color-brown-dark);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.editorial-lead {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  max-width: 90%;
+  margin: 0 auto;
+}

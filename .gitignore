@@ -1,0 +1,12 @@
+# Sistema y SO
+.DS_Store
+Thumbs.db
+*.log
+
+# Entornos y dependencias
+node_modules/
+
+# Archivos de pruebas y temporales
+test-*.js
+audit.js
+.system_generated/

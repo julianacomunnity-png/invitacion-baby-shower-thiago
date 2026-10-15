@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Baby Shower Thiago</title>
+
+  <!-- Metadatos de SEO & Compartir por WhatsApp (Open Graph) - Cero emojis -->
+  <meta name="description" content="Te invitamos con mucha ilusión a celebrar la dulce espera y llegada de Thiago. Domingo 8 de Noviembre · 3:00 PM">
+  <meta name="theme-color" content="#f5af19">
+  <meta property="og:title" content="Baby Shower Thiago">
+  <meta property="og:description" content="Te invitamos con mucha ilusión a celebrar la dulce espera y pronta llegada de nuestro pequeño Thiago.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/bear-hero.gif">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baby Shower Thiago">
+  <meta name="twitter:description" content="Te invitamos a celebrar la dulce llegada de Thiago.">
+
+  <!-- Favicon SVG vectorial delicado con monograma T (libre de emojis) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23f5af19'/><text x='50%25' y='64%25' text-anchor='middle' font-family='Georgia,serif' font-size='50' font-weight='bold' fill='%234a2c11'>T</text></svg>">
+
+  <!-- Google Fonts optimizadas: Agbalumo, Playfair Display, Caveat y Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS del sistema -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="envelope-locked">
+
+  <!-- Partículas doradas suaves en segundo plano -->
+  <div id="ambientParticles" aria-hidden="true"></div>
+
+  <!-- Reproductor de música flotante persistente ("Te Esperaba" — Carlos Rivera) -->
+  <div class="floating-music-player">
+    <button id="musicToggleBtn" class="music-toggle-btn" aria-label="Reproducir música de fondo" title="Te Esperaba — Carlos Rivera">
+      <span class="music-icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+      </span>
+      <span class="music-label">Música</span>
+      <div id="musicWaveIndicator" class="music-wave">
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+        <span class="wave-bar"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- ==================================================================
+       PANTALLA 1: EXPERIENCIA DE SOBRE ARTESANAL INTERACTIVO (HERO REVEAL)
+       ================================================================== -->
+  <section id="envelopeScreen" class="envelope-screen" aria-label="Apertura de invitación">
+    <div class="envelope-outer-wrap">
+
+      <!-- Encabezado sutil previo al sobre -->
+      <div class="envelope-header-intro">
+        <div class="envelope-bee-icon">
+          <img src="assets/images/flying-bee.svg" alt="Abejita decorativa" class="bee-animated" width="46" height="46">
+        </div>
+        <p class="envelope-pretitle">Una dulce invitación para ti</p>
+        <h2 class="envelope-baby-name">Thiago</h2>
+        <p class="envelope-event-label">BABY SHOWER</p>
+      </div>
+
+      <!-- El Sobre Físico con Solapa Triangular y Sello de Cera -->
+      <div class="physical-envelope-card" id="physicalEnvelope">
+        
+        <!-- Solapa triangular superior abatible -->
+        <div class="envelope-triangle-flap" id="envelopeTriangleFlap">
+          <svg class="triangle-flap-svg" viewBox="0 0 340 130" preserveAspectRatio="none">
+            <polygon points="0,0 340,0 170,130" fill="#eed9b7" stroke="#dcbf96" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <!-- Sello de Cera Dorada con Monograma T/Abeja y disparador interactivo -->
+        <div class="wax-seal-wrapper">
+          <button id="envelopeWaxSealBtn" class="wax-seal-press-btn" aria-label="Ver Invitación">
+            <img src="assets/images/wax-seal.svg" alt="Sello de cera dorada artesanal" class="envelope-wax-seal" id="waxSealGraphic">
+            <span class="wax-seal-legend">VER INVITACIÓN</span>
+          </button>
+        </div>
+
+        <!-- Cuerpo / Bolsillo del sobre físico -->
+        <div class="envelope-pocket-body">
+          <div class="envelope-paper-texture"></div>
+          <div class="envelope-liner-fold"></div>
+        </div>
+
+      </div>
+
+      <!-- Botón de apertura adicional con texto claro -->
+      <div class="envelope-cta-container">
+        <button id="openInvitationBtn" class="btn btn-seal-action pulse-button">
+          VER INVITACIÓN
+        </button>
+        <p class="envelope-hint">Toca el sello o el botón para descubrir los detalles de esta dulce aventura</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       CONTENEDOR PRINCIPAL: BROCHURE EDITORIAL CONTINUO (SIN CAJAS AISLADAS)
+       ================================================================== -->
+  <main id="mainContent" class="invitation-wrapper brochure-sheet" role="main">
+
+    <!-- ----------------------------------------------------------------
+         PORTADA EDITORIAL: MONOGRAMA, TÍTULO, ILUSTRACIÓN Y RELATO
+         ---------------------------------------------------------------- -->
+    <header id="heroSection" class="brochure-header">
+      <div class="brochure-clouds-bg" aria-hidden="true">
+        <img src="assets/images/clouds-stars.png" alt="Nubes y estrellas" width="50%">
+      </div>
+
+      <p class="brochure-welcome-tag animate-on-scroll">Hay una nueva aventura por comenzar...</p>
+      <h1 class="brochure-baby-name dyn-baby-name animate-on-scroll">Thiago</h1>
+      <p class="brochure-event-type dyn-event-type animate-on-scroll">Baby Shower</p>
+
+      <!-- Ilustración central del osito con tarro de miel y abejitas -->
+      <div class="brochure-illustration-wrap floating-element animate-on-scroll">
+        <img src="assets/images/flying-bee.svg" alt="Abejita volando" class="bee-float-left bee-animated" aria-hidden="true">
+        <img src="assets/images/bear-hero.gif" alt="Osito tierno esperando la llegada de Thiago" class="bear-main-illustration">
+        <img src="assets/images/flying-bee.svg" alt="Abejita volando" class="bee-float-right bee-animated-reverse" aria-hidden="true">
+      </div>
+
+      <!-- Relato poético y emocional integrado orgánicamente -->
+      <div class="brochure-story-block animate-on-scroll">
+        <p class="brochure-story-text" id="emotionalStoryText">
+          Familia y amigos, nuestro corazón está lleno de felicidad porque pronto llegará a nuestras vidas el más grande amor. Con mucha ilusión queremos compartir contigo la dulce espera y celebrar juntos la llegada de nuestro pequeño Thiago.
+        </p>
+      </div>
+    </header>
+
+    <!-- Divisor Botánico -->
+    <div class="editorial-divider animate-on-scroll" aria-hidden="true">
+      <img src="assets/images/botanical-border.svg" alt="Follaje decorativo">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         FECHA Y HORA DEL EVENTO (ESTRICTO: 8 DE NOVIEMBRE / DOMINGO / 3:00 PM)
+         ---------------------------------------------------------------- -->
+    <section class="brochure-section date-editorial-section animate-on-scroll" aria-label="Fecha y hora del evento">
+      <div class="editorial-date-container">
+        <span class="editorial-kicker">Reserva la Fecha</span>
+        <h2 class="editorial-date-title dyn-date-formatted">8 DE NOVIEMBRE</h2>
+        <div class="editorial-day-pill dyn-day-name">DOMINGO</div>
+        <div class="editorial-time-row">
+          <svg class="editorial-time-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span class="editorial-time-text dyn-time">3:00 PM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divisor Botánico -->
+    <div class="editorial-divider animate-on-scroll" aria-hidden="true">
+      <img src="assets/images/botanical-border.svg" alt="Follaje decorativo">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         UBICACIÓN / LUGAR DE ENCUENTRO
+         ---------------------------------------------------------------- -->
+    <section class="brochure-section location-editorial-section animate-on-scroll" aria-label="Lugar de encuentro">
+      <div class="editorial-header">
+        <span class="editorial-kicker">¿Dónde será?</span>
+        <h3 class="editorial-title">Lugar de Encuentro</h3>
+        <p class="editorial-lead">Te esperamos para compartir una hermosa tarde.</p>
+      </div>
+
+      <div class="location-paper-plate">
+        <div class="location-pin-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#b56b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h4 id="locationVenueTitle" class="location-venue-name">Conjunto Residencial Cerritos Campestre — Salón Social</h4>
+        <p id="locationAddressText" class="location-address" style="display: none;"></p>
+        <p id="locationInstructionsText" class="location-instructions">
+          Contamos con parqueadero privado y zona verde para compartir una hermosa tarde campestre.
+        </p>
+      </div>
+
+      <div class="editorial-action-center">
+        <button id="locationMapBtn" class="btn btn-editorial-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          VER UBICACIÓN
+        </button>
+      </div>
+    </section>
+
+    <!-- Divisor Botánico -->
+    <div class="editorial-divider animate-on-scroll" aria-hidden="true">
+      <img src="assets/images/botanical-border.svg" alt="Follaje decorativo">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         CONFIRMACIÓN DE ASISTENCIA POR WHATSAPP (RSVP)
+         ---------------------------------------------------------------- -->
+    <section class="brochure-section rsvp-editorial-section animate-on-scroll" aria-label="Confirmación de asistencia">
+      <div class="editorial-header">
+        <span class="editorial-kicker">Confirmación</span>
+        <h3 class="editorial-title">¿Nos Acompañas?</h3>
+        <p class="editorial-lead">Queremos celebrar este momento tan especial contigo.</p>
+      </div>
+
+      <form id="rsvpForm" class="rsvp-editorial-form" novalidate>
+        <!-- Nombre completo -->
+        <div class="rsvp-form-group">
+          <label for="rsvpName" class="rsvp-label">Nombre y Apellido</label>
+          <input type="text" id="rsvpName" class="rsvp-input" placeholder="Ej: María Gómez" autocomplete="name">
+        </div>
+
+        <!-- Confirmación Sí / No (Sin emojis) -->
+        <div class="rsvp-form-group">
+          <label class="rsvp-label">¿Podrás asistir?</label>
+          <div class="attendance-toggle-group">
+            <label>
+              <input type="radio" name="rsvpAttendance" value="yes" checked>
+              <span class="attendance-toggle-card">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>¡Sí, asistiré!</span>
+              </span>
+            </label>
+            <label>
+              <input type="radio" name="rsvpAttendance" value="no">
+              <span class="attendance-toggle-card">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>No podré asistir</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Número de acompañantes -->
+        <div class="rsvp-form-group">
+          <label for="rsvpCompanions" class="rsvp-label">Número de Acompañantes</label>
+          <select id="rsvpCompanions" class="rsvp-select">
+            <option value="0">Voy solo / sola (0 acompañantes)</option>
+            <option value="1">+1 Acompañante</option>
+            <option value="2">+2 Acompañantes</option>
+            <option value="3">+3 Acompañantes</option>
+            <option value="4">+4 Acompañantes</option>
+            <option value="5">+5 o más acompañantes</option>
+          </select>
+        </div>
+
+        <!-- Mensaje de cariño opcional -->
+        <div class="rsvp-form-group">
+          <label for="rsvpNote" class="rsvp-label">Dedicatoria para Thiago (Opcional)</label>
+          <textarea id="rsvpNote" class="rsvp-textarea" rows="2" placeholder="Escribe un mensaje de bendición para Thiago y sus papitos..."></textarea>
+        </div>
+
+        <!-- Botón principal de confirmación que abre directamente https://wa.link/j0x1dj -->
+        <button type="submit" class="btn btn-whatsapp btn-block btn-lg" id="whatsappDirectBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          CONFIRMAR ASISTENCIA
+        </button>
+
+        <p id="rsvpDeadlineText" class="rsvp-deadline-badge">
+          Agradecemos confirmar tu asistencia con anticipación.
+        </p>
+      </form>
+    </section>
+
+    <!-- Divisor Botánico -->
+    <div class="editorial-divider animate-on-scroll" aria-hidden="true">
+      <img src="assets/images/botanical-border.svg" alt="Follaje decorativo">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         LISTA DE REGALOS (DISPARADOR COMPACTO AL MODAL)
+         ---------------------------------------------------------------- -->
+    <section class="brochure-section gifts-editorial-section animate-on-scroll" aria-label="Lista de regalos">
+      <div class="gifts-brochure-plate">
+        <div class="gifts-plate-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#b56b00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+            <rect x="2" y="7" width="20" height="5"></rect>
+            <line x1="12" y1="22" x2="12" y2="7"></line>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+          </svg>
+        </div>
+        <span class="editorial-kicker">Muestras de Cariño</span>
+        <h3 class="editorial-title">Lista de Regalos</h3>
+        <p class="editorial-lead">
+          Tu presencia y bendición son nuestro mejor regalo. Si deseas tener un detalle con Thiago, aquí encontrarás algunas opciones pensadas con amor.
+        </p>
+        <button id="openGiftsModalBtn" class="btn btn-primary btn-block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 12 20 22 4 22 4 12"></polyline>
+            <rect x="2" y="7" width="20" height="5"></rect>
+            <line x1="12" y1="22" x2="12" y2="7"></line>
+          </svg>
+          VER LISTA DE REGALOS
+        </button>
+      </div>
+    </section>
+
+    <!-- Divisor Botánico -->
+    <div class="editorial-divider animate-on-scroll" aria-hidden="true">
+      <img src="assets/images/botanical-border.svg" alt="Follaje decorativo">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         CIERRE EMOTIVO EDITORIAL & FOOTER
+         ---------------------------------------------------------------- -->
+    <section class="brochure-closing animate-on-scroll">
+      <div class="closing-honey-pot floating-element">
+        <img src="assets/images/honey-pot.png" alt="Tarro de miel decorativo">
+      </div>
+
+      <h3 id="closingPhrase1" class="closing-phrase-main">Gracias por acompañarnos en este momento tan especial.</h3>
+      <p id="closingPhrase2" class="closing-phrase-sub">Te esperamos con todo el amor para celebrar la llegada de THIAGO.</p>
+
+      <div id="closingSignature" class="closing-signature">
+        Con amor, Thiago
+      </div>
+
+      <div class="closing-reminder-pill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span class="dyn-date-formatted">8 DE NOVIEMBRE</span>
+        <span>·</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span class="dyn-time">3:00 PM</span>
+      </div>
+
+      <footer class="site-footer">
+        <p>Baby Shower Thiago · Hecho con amor</p>
+        <div>
+          <a href="#admin" id="adminOpenBtn" class="admin-open-link" title="Área privada para los padres">
+            Control de Papitos
+          </a>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================
+       MODAL ELEGANTE DE LISTA DE REGALOS (LIBRE DE DATOS BANCARIOS)
+       ================================================================== -->
+  <div id="giftsModal" class="gifts-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="giftsModalTitle">
+    <div class="gifts-modal-dialog" id="giftsModalDialog">
+      <div class="gifts-modal-header">
+        <h3 id="giftsModalTitle">Lista de Regalos</h3>
+        <button id="closeGiftsModalBtn" class="gifts-modal-close" aria-label="Cerrar lista de regalos">&times;</button>
+      </div>
+      <div class="gifts-modal-content">
+        <p class="gifts-modal-lead">
+          Tu presencia es lo más importante para nosotros. Si deseas hacernos un detalle para Thiago, aquí tienes algunas ideas:
+        </p>
+
+        <!-- Contenedor dinámico de regalos -->
+        <div id="giftsModalContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de notificaciones Toast -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts en arquitectura ES Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1132 @@
+/* ====================================================================
+   COMPONENTS.CSS - COMPONENTES VISUALES EDITORIALES
+   Baby Shower Thiago
+   ==================================================================== */
+
+/* --------------------------------------------------------------------
+   1. PANTALLA INICIAL: SOBRE ARTESANAL FÍSICO (ENVELOPE SCREEN)
+   -------------------------------------------------------------------- */
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: 
+    radial-gradient(circle at 50% 30%, #fff7e4 0%, #faecd0 55%, #f2dcba 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.envelope-outer-wrap {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.envelope-header-intro {
+  margin-bottom: 14px;
+}
+
+.envelope-bee-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 4px;
+}
+
+.envelope-pretitle {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-brown-light);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.envelope-baby-name {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--color-honey-deep);
+  margin-bottom: 2px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.envelope-event-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--color-brown-medium);
+  text-transform: uppercase;
+}
+
+/* El Sobre Físico Tridimensional */
+.physical-envelope-card {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(160deg, #f7e8ce 0%, #ebd4b0 60%, #debfa4 100%);
+  border-radius: 18px;
+  border: 1.5px solid #d9be97;
+  box-shadow: 
+    0 22px 50px rgba(100, 60, 20, 0.22),
+    0 4px 14px rgba(100, 60, 20, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  position: relative;
+  perspective: 1000px;
+  margin: 12px auto 18px;
+}
+
+/* Solapa Triangular Superior */
+.envelope-triangle-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  transform-origin: top center;
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 4;
+  filter: drop-shadow(0 4px 8px rgba(90, 50, 16, 0.16));
+}
+
+.triangle-flap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cuerpo y textura interior */
+.envelope-pocket-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.envelope-paper-texture {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#d6b991 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.35;
+}
+
+.envelope-liner-fold {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(0deg, rgba(200, 160, 120, 0.22) 0%, transparent 100%);
+}
+
+/* Sello de cera en la punta de la solapa */
+.wax-seal-wrapper {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.wax-seal-press-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+}
+
+.envelope-wax-seal {
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 8px 18px rgba(100, 55, 15, 0.32));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wax-seal-press-btn:hover .envelope-wax-seal {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.wax-seal-legend {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-brown-dark);
+  text-transform: uppercase;
+  margin-top: -6px;
+  background: rgba(255, 252, 244, 0.94);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #eccf9d;
+  box-shadow: 0 2px 6px rgba(90, 50, 16, 0.12);
+}
+
+.envelope-cta-container {
+  margin-top: 10px;
+}
+
+.envelope-hint {
+  font-size: 0.82rem;
+  color: var(--color-brown-medium);
+  margin-top: 10px;
+  line-height: 1.4;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------
+   2. REPRODUCTOR DE MÚSICA FLOTANTE (MINIMALISTA VECTORIAL)
+   -------------------------------------------------------------------- */
+.floating-music-player {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.music-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 252, 244, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid #f2dfba;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 16px rgba(112, 71, 36, 0.12);
+  color: var(--color-brown-dark);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.music-toggle-btn:hover {
+  background: #ffffff;
+  border-color: var(--color-primary);
+  transform: scale(1.04);
+}
+
+.music-toggle-btn.is-playing {
+  border-color: #ffd269;
+  background: #fffdf5;
+}
+
+.music-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-honey-deep);
+}
+
+.music-wave {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 16px;
+}
+
+/* --------------------------------------------------------------------
+   3. BROCHURE EDITORIAL - ENCABEZADO Y PORTADA
+   -------------------------------------------------------------------- */
+.brochure-header {
+  padding: 44px 0px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.brochure-clouds-bg {
+  width: 80%;
+  max-width: 3060px;
+  margin-left: 310px;
+  opacity: 0.88;
+}
+
+.brochure-welcome-tag {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-brown-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.brochure-baby-name {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  color: var(--color-honey-deep);
+  line-height: 1.05;
+  margin-bottom: 2px;
+  text-shadow: 2px 2px 0px #fff7d6;
+  letter-spacing: 1px;
+}
+
+.brochure-event-type {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-brown-medium);
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.brochure-illustration-wrap {
+  width: 270px;
+  max-width: 82%;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.bear-main-illustration {
+  width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(112, 71, 36, 0.12));
+}
+
+.bee-float-left {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+}
+
+.bee-float-right {
+  position: absolute;
+  bottom: 20px;
+  left: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.brochure-story-block {
+  max-width: 390px;
+  margin: 12px auto 0;
+  padding: 16px 20px;
+  border-left: 2.5px solid #edd4a8;
+  border-right: 2.5px solid #edd4a8;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius-sm);
+}
+
+.brochure-story-text {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-brown-medium);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------
+   4. SECCIÓN FECHA Y HORA (ESTRICTO: 8 DE NOVIEMBRE / DOMINGO / 3:00 PM)
+   -------------------------------------------------------------------- */
+.brochure-section {
+  padding: 14px 22px;
+  position: relative;
+}
+
+.editorial-date-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1.5px solid #f3e0bf;
+  border-radius: var(--radius-lg);
+  padding: 30px 18px 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.editorial-date-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+.editorial-date-title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: var(--color-brown-dark);
+  margin: 8px 0 6px;
+  line-height: 1.15;
+}
+
+.editorial-day-pill {
+  display: inline-block;
+  background: var(--bg-gold-light);
+  color: var(--color-honey-deep);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  padding: 5px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #f8dfaa;
+  margin-bottom: 16px;
+}
+
+.editorial-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed #ebd5ad;
+  color: var(--color-brown-medium);
+}
+
+.editorial-time-icon {
+  color: var(--color-honey-deep);
+}
+
+.editorial-time-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* --------------------------------------------------------------------
+   5. SECCIÓN LUGAR DE ENCUENTRO / UBICACIÓN
+   -------------------------------------------------------------------- */
+.location-paper-plate {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1.5px solid #eedebf;
+  border-radius: var(--radius-md);
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 18px;
+}
+
+.location-pin-icon {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.location-venue-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin-bottom: 4px;
+}
+
+.location-address {
+  font-size: 0.95rem;
+  color: var(--color-brown-medium);
+  margin-bottom: 8px;
+}
+
+.location-instructions {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.editorial-action-center {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------
+   6. SECCIÓN RSVP (WHATSAPP)
+   -------------------------------------------------------------------- */
+.rsvp-editorial-form {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid #eedebf;
+  border-radius: var(--radius-lg);
+  padding: 26px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rsvp-form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.rsvp-label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin-bottom: 6px;
+}
+
+.rsvp-input,
+.rsvp-select,
+.rsvp-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-brown-dark);
+  transition: var(--transition-normal);
+}
+
+.rsvp-input:focus,
+.rsvp-select:focus,
+.rsvp-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(245, 175, 25, 0.15);
+}
+
+.rsvp-textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+.attendance-toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.attendance-toggle-group input[type="radio"] {
+  display: none;
+}
+
+.attendance-toggle-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: #ffffff;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--color-brown-medium);
+  text-align: center;
+}
+
+.attendance-toggle-group input[type="radio"]:checked + .attendance-toggle-card {
+  border-color: var(--color-primary);
+  background: #fff8e8;
+  color: var(--color-brown-dark);
+  box-shadow: 0 4px 12px rgba(245, 175, 25, 0.2);
+  transform: translateY(-2px);
+}
+
+.rsvp-deadline-badge {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 14px;
+}
+
+/* --------------------------------------------------------------------
+   7. SECCIÓN LISTA DE REGALOS (COMPACTO EN BROCHURE)
+   -------------------------------------------------------------------- */
+.gifts-brochure-plate {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid #eedebf;
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.gifts-plate-icon {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Modal Elegante de Lista de Regalos (Libre de datos bancarios) */
+.gifts-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 27, 10, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gifts-modal-backdrop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gifts-modal-dialog {
+  background: var(--bg-crema);
+  border-radius: 28px;
+  width: 100%;
+  max-width: min(90vw, 460px);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(74, 44, 17, 0.35);
+  border: 2px solid #f2dfba;
+  overflow: hidden;
+}
+
+.gifts-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid #f2dfba;
+  background: #ffffff;
+}
+
+.gifts-modal-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-brown-dark);
+}
+
+.gifts-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-brown-light);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: transform 0.2s ease;
+}
+
+.gifts-modal-close:hover {
+  transform: scale(1.15);
+  color: var(--color-brown-dark);
+}
+
+.gifts-modal-content {
+  padding: 18px 18px 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gifts-modal-lead {
+  font-size: 0.9rem;
+  color: var(--color-brown-medium);
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Bloques de Categorías de Regalos (5 Categorías) */
+.gifts-category-block {
+  background: #ffffff;
+  border: 1.5px solid #f2dfba;
+  border-radius: var(--radius-md);
+  padding: 16px 16px 14px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.gifts-category-block:hover {
+  border-color: #ffd875;
+  box-shadow: var(--shadow-md);
+}
+
+.gifts-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #edd5ad;
+}
+
+.gifts-category-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #fae1a8;
+  color: var(--color-honey-deep);
+}
+
+.gifts-category-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.gifts-item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gifts-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.45;
+}
+
+.gifts-item-bullet {
+  color: var(--color-honey-deep);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.gifts-item-text {
+  flex: 1;
+}
+
+.gift-modal-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1.5px solid #f5e9d0;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.gift-modal-card:hover {
+  border-color: #ffd875;
+  box-shadow: var(--shadow-md);
+}
+
+.gift-icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #fae1a8;
+}
+
+.gift-modal-body {
+  flex: 1;
+}
+
+.gift-category {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-honey-deep);
+  display: block;
+}
+
+.gift-name {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin-bottom: 2px;
+}
+
+.gift-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.gift-status-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-leaf-green);
+  display: inline-block;
+}
+
+.gift-link-btn {
+  margin-top: 4px;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+}
+
+/* --------------------------------------------------------------------
+   8. CIERRE EMOTIVO Y PIE EDITORIAL
+   -------------------------------------------------------------------- */
+.brochure-closing {
+  text-align: center;
+  padding: 30px 20px 50px;
+}
+
+.closing-honey-pot {
+  width: 130px;
+  margin: 0 auto 16px;
+}
+
+.closing-phrase-main {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin-bottom: 6px;
+}
+
+.closing-phrase-sub {
+  font-size: 0.94rem;
+  color: var(--color-brown-medium);
+  margin-bottom: 16px;
+}
+
+.closing-signature {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--color-honey-deep);
+  margin-bottom: 22px;
+}
+
+.closing-reminder-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid #f2dfba;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--color-brown-dark);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+}
+
+.closing-reminder-pill svg {
+  color: var(--color-honey-deep);
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 20px 20px 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.admin-open-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-brown-light);
+  font-size: 0.78rem;
+  margin-top: 8px;
+  opacity: 0.75;
+}
+
+.admin-open-link:hover {
+  opacity: 1;
+  color: var(--color-honey-deep);
+}
+
+/* --------------------------------------------------------------------
+   9. MODAL ADMINISTRATIVO & TOASTS
+   -------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 90%;
+  max-width: 380px;
+  pointer-events: none;
+}
+
+.toast-item {
+  background: #ffffff;
+  border-radius: var(--radius-pill);
+  padding: 12px 20px;
+  box-shadow: 0 10px 30px rgba(74, 44, 17, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-brown-dark);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: auto;
+  border: 1.5px solid #f5af19;
+}
+
+.toast-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modales Genéricos & Admin */
+.info-modal-backdrop,
+.admin-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 27, 10, 0.55);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.info-modal-backdrop.is-visible,
+.admin-modal-backdrop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid #f0deb8;
+}
+
+.info-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.info-modal-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-brown-dark);
+}
+
+.info-modal-close,
+.admin-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-brown-light);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.info-modal-body {
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.admin-modal-dialog {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 24px;
+}
+
+.admin-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-honey-deep);
+  background: var(--bg-gold-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.admin-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.metric-card {
+  background: var(--bg-card-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 6px;
+  text-align: center;
+  border: 1px solid #faeec7;
+}
+
+.metric-primary {
+  background: #fef4dc;
+  border-color: #ffd875;
+}
+
+.metric-declined {
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-brown-dark);
+  display: block;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-brown-light);
+  margin-top: 4px;
+  display: block;
+}
+
+.admin-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.admin-table-container {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #f0deb8;
+  border-radius: var(--radius-sm);
+  max-height: 320px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f5ebd5;
+}
+
+.admin-table th {
+  background: #fdf6e6;
+  color: var(--color-brown-dark);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+.status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.status-yes {
+  background: #e6f9ed;
+  color: #15803d;
+}
+
+.status-no {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.cell-note {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.btn-delete-guest {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #c93d2b;
+  font-weight: 700;
+}
+
+.admin-empty-state {
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--color-text-muted);
+}
+
+.admin-modal-footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
